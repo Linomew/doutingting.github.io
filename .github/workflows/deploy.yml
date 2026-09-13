@@ -28,15 +28,17 @@ jobs:
           node-version: 24
 
       - name: Install dependencies
+        working-directory: 项目/作品集
         run: npm install
 
       - name: Build
+        working-directory: 项目/作品集
         run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./项目/作品集/dist
 
       - name: Deploy
         id: deployment
